@@ -4,7 +4,7 @@ from nodo import Nodo
 import json
 
 
-url = "http://192.168.1.11:4000/api/post" 
+url = "http://192.168.1.13:4000/api/post" 
 
 with open("config.json", "r") as configJson:
     config = json.load(configJson)

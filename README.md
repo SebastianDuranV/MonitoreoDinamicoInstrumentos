@@ -73,6 +73,8 @@ En Documentos abra el terminal e ingrese lo siguiente:
 
 El gran paso en que se tendrá que preguntar en las referencias, en que tendrá que configurar el sistema operativo para que habilite ciertas entradas. Que son en el caso del sensor Ds18b20, Bmp280, por lo cual puede consultar las respectivas referencias. En la que no siempre pueda funcionar con otros dispositivos semejantes. Por lo que se le recomienda verificar las fuentes.
 
+Ademas si no está clonado, lo más probable es que puedas necesitar que el programa se ejecute automaticamente. Por lo que se suguiere seguir el siguiente tutorial, para el archivo init.py en este mismo git ejecutado con python3.
+
 ## Configuración
 
 Para configurar el nodo es necesario establecer ciertos paramentros.

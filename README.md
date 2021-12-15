@@ -77,16 +77,18 @@ El gran paso en que se tendrá que preguntar en las referencias, en que tendrá 
 
 Para configurar el nodo es necesario establecer ciertos paramentros.
 Uno de ellos es importante inicializar el nodo en el sitio web - cuencaustral. Por lo que en cuencaustral.cl puedes ir al modo editor en que, se registra al ingresar como administrador,veras la siguiente página.
+![alt text](https://raw.githubusercontent.com/SebastianDuranV/MonitoreoDinamicoInstrumentos/master/imagenes/modoeditor.png)
 
- (imagen)
 
-El siguiente poso es ir a "Crear -> Nodo" ingresa los datos.
+El siguiente poso es ir a "Crear -> Nodo" ingresa los datos que son el nombre, latitud, longitud, descripción o cuerpo.
 
-(imagen)
+![alt text](https://raw.githubusercontent.com/SebastianDuranV/MonitoreoDinamicoInstrumentos/master/imagenes/modoeditor-hambur.png)
+
+![alt text](https://raw.githubusercontent.com/SebastianDuranV/MonitoreoDinamicoInstrumentos/master/imagenes/crearnodo.png)
 
 Luego te entregará una id que deberás ingresar en el archivo "config.json".
 
-(imagen)
+![alt text](https://raw.githubusercontent.com/SebastianDuranV/MonitoreoDinamicoInstrumentos/master/imagenes/resultado.png)
 
 En la que tendrás que cambiar los numeros, de las configuraciones en que ademas de cambiar el identificador (id), puedes cambiar las frecuencias, de cada cuantos minutos se encenderá y obtendrá los datos.
 
@@ -114,11 +116,16 @@ En la que tendrás que cambiar los numeros, de las configuraciones en que ademas
 Por lo que en la pagina de cuencaustral.cl, al momento de encender la raspberry, empezará a enviar datos directamente a la los servidores por lo que se podrá visualizar los graficos, foto y video que se mostrará en el sitio.
 En el sitio de web, en el inicio desde "Monitoreo -> Dinamico", busca donde colocaste el nodo o la raspberry. Entra al nodo y vas a visualizar la información que recolecta la raspberry.
 
-(imagen).
+![alt text](https://raw.githubusercontent.com/SebastianDuranV/MonitoreoDinamicoInstrumentos/master/imagenes/mapa.png)
 
 
 Por otro lado tienes en el modo editor, la forma de visualizar los nodos que se ha hecho, ademas de poder eliminar y editar cada nodo. En los botones disponible en la info de cada nodo o en la lista. "Lista -> Nodo"
 
+![alt text](https://raw.githubusercontent.com/SebastianDuranV/MonitoreoDinamicoInstrumentos/master/imagenes/mostrar1.png)
+
+![alt text](https://raw.githubusercontent.com/SebastianDuranV/MonitoreoDinamicoInstrumentos/master/imagenes/mostrar2.png)
+
+  NOTA: LA RASPBERRY DEBE ESTAR CONECTADO CORRECTAMENTE CON TODOS LOS INSTRUMENTOS, DE LO CONTRARIO NINGÚN DATO SE VISUALIZARA, POR LO QUE DEBES ASEGURARTE QUE SE ENVÍE EL PRIMER DATO, AL MOMENTO DE INSTALAR. 
 
 # Referencias.
 

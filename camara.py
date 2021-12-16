@@ -24,7 +24,7 @@ class Camara(Instrumento):
         with open('test.jpg', mode='rb') as file:
             img = file.read()
 
-        dato = { "dato" : base64.b64encode(img), "data": time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}
+        dato = { "dato" : base64.b64encode(img), "data": time.strftime('%Y-%m-%d-%H:%M:%S', time.localtime())}
 
         self.guardarDatos("camara",dato)
         return dato 

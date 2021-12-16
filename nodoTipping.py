@@ -19,20 +19,12 @@ class Nodo:
         self.instrumentos = []
 
         #Insrumentos de medición
-        from camara import Camara
-        from bmp280s import Bmp 
-        from ms5803 import Ms
-        from ds18b20 import Ds
-        from ultrasonido import Ultrasonido
+
         from tipping import Tipping
 
-        self.instrumentos.append(Camara(config["instrumentos"]["camara"],"camara"))
-        self.instrumentos.append(Bmp(config["instrumentos"]["bmp280"],"bmp280"))
-        self.instrumentos.append(Ms(config["instrumentos"]["ms5803"], "ms5803"))
-        self.instrumentos.append(Ds(config["instrumentos"]["ds18b20"], "ds18b20"))
-        self.instrumentos.append(Ultrasonido(config["instrumentos"]["ultrasonido"], "ultrasonido"))
+       
         #Se ejecutará en otro plano
-        # self.instrumentos.append(Tipping(config["instrumentos"]["tipping"], "tipping"))
+        self.instrumentos.append(Tipping(config["instrumentos"]["tipping"], "tipping"))
 
     def loop(self):
        
@@ -40,22 +32,11 @@ class Nodo:
         
         while True:
             
-            s = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
-
-            if s[17:19] == '00': 
-                for instrumento in self.instrumentos:
-                    if self.count % instrumento.obtenerFrecuencia() == 0:
-                        print(instrumento.obtenerFrecuencia())
-                        dato = instrumento.obtenerDatos()
-                        self.enviarDatosServidor(dato, instrumento.obtenerNombre())
+            for instrumento in self.instrumentos:
+                dato = instrumento.obtenerDatos()
+                self.enviarDatosServidor(dato, instrumento.obtenerNombre())
             
-                time.sleep(1)
-                self.count += 1
-            else:
-                #system('clear')
-                print(s)
-                print(self.count)
-                time.sleep(1)
+           
          
 
 
@@ -144,22 +125,5 @@ class Nodo:
             return 0
 
 
-    def enviarFotos(self):
-
-            listaFotos = glob.glob('*.jpg')
-            listaFotos.sort()
-
-            listaFotos.remove("test.jpg")
-
-
-
-            try:
-                for nombreFoto in listaFotos:
-                    with open(nombreFoto, mode='rb') as file:
-                        img = file.read()
-                    datos = { "dato" : base64.b64encode(img), "data": nombreFoto[:len(nombreFoto)-4]}
-                    requests.post(url = self.url + '/' + str(self.id) + '/camara' , json = datos)
-                    os.remove(nombreFoto)
-            except:
-                pass
+    
 
